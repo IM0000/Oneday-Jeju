@@ -60,8 +60,8 @@
 		<selectKey order="BEFORE" resultType="int" keyProperty="rvNo">
 			SELECT review_seq.nextval FROM dual
 		</selectKey>
-		INSERT INTO review( rv_no, rv_title, rv_content, user_id)
-		VALUES( #{rvNo}, #{rvTitle}, #{rvContent}, #{userId})
+		INSERT INTO review( rv_no, user_no, rv_title, rv_content, user_id)
+		VALUES( #{rvNo}, #{userNo}, #{rvTitle}, #{rvContent}, #{userId})
 	</insert>
 	
 	<update id="update" parameterType="jeju.dto.Review">
